@@ -18,27 +18,38 @@
 
     <input type="submit" name="plus" id="plus" value="plus" /><br/>
     <input type="submit" name="minus" id="minus" value="minus" /><br/>
-    <input type="submit" name="equals" id="equals" value="equal" /><br/>
+    <input type="submit" name="equals" id="equals" value="equals" /><br/>
 </form>
 
 <?php
 
+$res = '';
+
 function testfun($a)
-{
-   echo "Your clicked: ". $a;
-}
+  {
+
+    //need some kind of notion of state in order to store running total???
+
+    global $res;
+
+    $res = !empty($_GET['res']) ? $_GET['res'] : '';
+    $res = $res." ".$a;
+    echo "Result:<input type='text' name='res' value='$res'/>";	
+  }
 
 for ($x = 0; $x <= 9; $x++){
-  if(array_key_exists($x,$_POST)){
+  if(array_key_exists($x, $_POST)){
     testfun($x);
   }
 }
 
-//use if, elif, else to handle: plus, minus, equals
-//don't worry about validation
-//number +/- number +/- number (in local memory)
-
-//bonus - small text box with content of equation 
+if(array_key_exists('plus', $_POST)){
+  testfun('plus');
+}elseif(array_key_exists('minus', $_POST)){
+  testfun('minus');
+}elseif(array_key_exists('equals', $_POST)){
+  testfun('equals');
+}
 
 ?>
 
