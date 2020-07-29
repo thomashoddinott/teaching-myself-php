@@ -2,54 +2,55 @@
 <title>Title</title>
 </head>
 
-<!-- //my attempt - using all I've learnt up to now and Google-->
 <body>
 
-<form method="post">
-    <input type="submit" name="1" id="1" value="1" /><br/>
-    <input type="submit" name="2" id="2" value="2" /><br/>
-    <input type="submit" name="3" id="3" value="3" /><br/>
-    <input type="submit" name="4" id="4" value="4" /><br/>
-    <input type="submit" name="5" id="5" value="5" /><br/>
-    <input type="submit" name="6" id="6" value="6" /><br/>
-    <input type="submit" name="7" id="7" value="7" /><br/>
-    <input type="submit" name="8" id="8" value="8" /><br/>
-    <input type="submit" name="9" id="9" value="9" /><br/>
+<form>
 
-    <input type="submit" name="plus" id="plus" value="plus" /><br/>
-    <input type="submit" name="minus" id="minus" value="minus" /><br/>
-    <input type="submit" name="equals" id="equals" value="equals" /><br/>
+  <input type="text" name="num1" placeholder="Number 1">
+  <input type="text" name="num2" placeholder="Number 2">
+
+  <select name="operator">
+    <option>None</option> 
+    <!-- ^ don't like this -->
+    <option>Add</option>
+    <option>Subtract</option>
+    <option>Multiply</option>
+    <option>Divide</option>
+  </select>
+  <br>
+  <br>
+  <button type = "submit" name="submit" value="submit">Calculate</button>
+  <!-- n.b. what happens at this stage when you press submit -->
+  <!-- http://localhost/teaching-myself-php/15_lets_build_a_calculator/index2.php?num1=5&num2=10&operator=Add&submit=submit -->
+
 </form>
 
+<p>The answer is: </p>
 <?php
 
-$res = '';
+  if (isset($_GET['submit'])) {
+    $res1 = $_GET['num1'];
+    $res2 = $_GET['num2'];
+    $operator = $_GET['operator'];
 
-function testfun($a)
-  {
-
-    //need some kind of notion of state in order to store running total???
-
-    global $res;
-
-    $res = !empty($_GET['res']) ? $_GET['res'] : '';
-    $res = $res." ".$a;
-    echo "Result:<input type='text' name='res' value='$res'/>";	
+    switch ($operator) {
+      case "None": //not a fan - see above
+        echo "error - please select an operator";
+      break;
+      case "Add": 
+        echo $res1 + $res2;
+      break;
+      case "Subtract": 
+        echo $res1 - $res2;
+      break;
+      case "Multiply": 
+        echo $res1 * $res2;
+      break;
+      case "Divide": 
+        echo $res1 / $res2;
+      break;
+    }
   }
-
-for ($x = 0; $x <= 9; $x++){
-  if(array_key_exists($x, $_POST)){
-    testfun($x);
-  }
-}
-
-if(array_key_exists('plus', $_POST)){
-  testfun('plus');
-}elseif(array_key_exists('minus', $_POST)){
-  testfun('minus');
-}elseif(array_key_exists('equals', $_POST)){
-  testfun('equals');
-}
 
 ?>
 
