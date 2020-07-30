@@ -1,0 +1,14 @@
+p {
+  text-align: center;
+  font-size: 48px;
+  font-family: Arial;
+  margin-top: 38vh;
+
+
+}.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* css is a piddle too */
