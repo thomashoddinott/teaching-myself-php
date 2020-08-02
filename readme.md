@@ -1,5 +1,8 @@
 I am currently following this tutorial: https://www.youtube.com/watch?v=qVU3V0A05k8&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-
 
+Other tutorials to follow???
+- http://zetcode.com/all/#php
+
 **Why commit your progress?**
 
 Similar to the (psychology?) behind of [#100DaysOfCode](https://www.100daysofcode.com/) — although an hour is a little much I think.
