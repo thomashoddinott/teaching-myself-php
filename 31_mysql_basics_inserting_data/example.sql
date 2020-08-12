@@ -1,4 +1,6 @@
 -- TODO: switch to DBeaver instead of this web console interface
+-- ^ that's better — see screenshot
+-- https://dbeaver.io/download/
 
 INSERT INTO posts (subject, content, date) 
 VALUES (
