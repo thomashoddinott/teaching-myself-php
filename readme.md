@@ -16,4 +16,8 @@ https://www.100daysofcode.com/
 
 Other tutorials to follow???
 - http://zetcode.com/all/#php
-- Laravel tutorial ???
+
+Frameworks to learn???
+- Laravel
+- Zend
+//todo - read: https://www.quora.com/What-is-the-difference-between-Zend-Framework-and-Laravel
