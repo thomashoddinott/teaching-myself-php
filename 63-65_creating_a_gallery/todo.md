@@ -1,0 +1,3 @@
+- add these three entries to database.sql so we have something to look at on init []
+- experiment and add some more css []
+- give everything a thorough test []

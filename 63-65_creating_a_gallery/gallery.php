@@ -7,42 +7,36 @@
   <head>
     <meta charset="utf-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-
-without css this is gonna look bad!
-
     <main>
       <section class="gallery-links">
         <div class="wrapper">
           <h2>Gallery</h2>
           
           <div class="gallery-container">
-            <a href="#">
-              <div></div>
-              <h3>h3 Title</h3>
-              <p>Paragraph</p>
-            </a>
-            <a href="#">
-              <div></div>
-              <h3>h3 Title</h3>
-              <p>Paragraph</p>
-            </a>
-            <a href="#">
-              <div></div>
-              <h3>h3 Title</h3>
-              <p>Paragraph</p>
-            </a>
-            <a href="#">
-              <div></div>
-              <h3>h3 Title</h3>
-              <p>Paragraph</p>
-            </a>
-            <a href="#">
-              <div></div>
-              <h3>h3 Title</h3>
-              <p>Paragraph</p>
-            </a>
+          <?php
+          include_once './includes/dbh.inc.php';
+          $sql = "select * from gallery order by orderGallery desc";
+          $stmt = mysqli_stmt_init($conn);
+          if (!mysqli_stmt_prepare($stmt, $sql)) {
+            echo "SQL failed";
+          } else {
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo '
+              <a href="#">
+                <div style="background-image: url(img/gallery/'.$row["imgFullNameGallery"].');"></div>
+                <h3>'.$row["titleGallery"].'</h3>
+                <p>'.$row["titleGallery"].'</p>
+              </a>
+              ';
+            }
+          }
+          ?>  
           </div>
 
         <?php
