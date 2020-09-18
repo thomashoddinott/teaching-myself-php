@@ -7,3 +7,12 @@ create table gallery (
   imgFullNameGallery longtext not null,
   orderGallery longtext not null
 );
+
+-- 
+
+INSERT INTO gallery (titleGallery, descGallery, imgFullNameGallery, orderGallery)
+VALUES
+	('Python', 'The Python logo', 'python.jpg', '1'),
+	('JavaScript', 'The JavaScript logo', 'JS.png', '2'),
+	('Elixir', 'The Elixir logo', 'elixir.png', '3')
+;

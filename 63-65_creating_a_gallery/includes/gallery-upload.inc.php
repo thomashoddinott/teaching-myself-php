@@ -3,11 +3,11 @@
 if (isset($_POST['submit'])) {
   $newFileName = $_POST['submit'];
 
-  if (empty($_POST['filename'])) {
-    $newFileName = "gallery";
-  } else {
-    $newFileName = strtolower(str_replace(" ", "-", $newFileName));
-  }
+  // if (empty($_POST['filename'])) {
+  //   $newFileName = "gallery";
+  // } else {
+  //   $newFileName = strtolower(str_replace(" ", "-", $newFileName));
+  // }
 
   $imageTitle = $_POST['filetitle'];
   $imageDesc = $_POST['filedesc'];

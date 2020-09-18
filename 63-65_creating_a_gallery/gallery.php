@@ -31,7 +31,7 @@
               <a href="#">
                 <div style="background-image: url(img/gallery/'.$row["imgFullNameGallery"].');"></div>
                 <h3>'.$row["titleGallery"].'</h3>
-                <p>'.$row["titleGallery"].'</p>
+                <p><i>'.$row["descGallery"].'</i></p>
               </a>
               ';
             }
@@ -43,8 +43,8 @@
         if (isset($_SESSION['username'])) {
           echo
             '<div class="gallery-upload">
+            <h3>Upload an image</h3>
               <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
-                <input type="text" name="filename" placeholder="File name">
                 <input type="text" name="filetitle" placeholder="Image title">
                 <input type="text" name="filedesc" placeholder="Image description">
                 <input type="file" name="file">

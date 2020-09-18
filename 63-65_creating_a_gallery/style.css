@@ -1,11 +1,13 @@
+/* pro tip - `shift+ctrl+r` in firefox to refresh css  */
+
 /* tutorial 3 - 30:02 */
 .gallery-container a:hover {
   opacity: 0.8;
 }
 
 .gallery-container a div {
-  width: 60%;
-  height: 235px;
+  width: 250px;
+  height: 250px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
