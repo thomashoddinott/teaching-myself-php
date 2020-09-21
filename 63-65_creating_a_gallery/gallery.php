@@ -28,11 +28,13 @@
 
             while ($row = mysqli_fetch_assoc($result)) {
               echo '
-              <a href="#">
-                <div style="background-image: url(img/gallery/'.$row["imgFullNameGallery"].');"></div>
+              <div class="gallery">
+                <a target="_blank" href="img/gallery/'.$row["imgFullNameGallery"].'">
+                  <img src="img/gallery/'.$row["imgFullNameGallery"].'" width="600" height="400">
+                </a>
                 <h3>'.$row["titleGallery"].'</h3>
                 <p><i>'.$row["descGallery"].'</i></p>
-              </a>
+              </div>
               ';
             }
           }
@@ -42,7 +44,9 @@
         <?php
         if (isset($_SESSION['username'])) {
           echo
-            '<div class="gallery-upload">
+            '
+            <div class="footer">
+            <br>
             <h3>Upload an image</h3>
               <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="filetitle" placeholder="Image title">
@@ -50,7 +54,8 @@
                 <input type="file" name="file">
                 <button type="submit" name="submit">Upload</button>
               </form>
-            </div>';
+            </div>
+            ';
         }
         ?>
 

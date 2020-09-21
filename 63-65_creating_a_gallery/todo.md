@@ -1,4 +1,4 @@
 - [x] add three entries to database.sql so we have something to look at on init
+- [] **simple gallery page with css styling** - see todos
 - [] give everything a thorough test
-- [] visuals: experiment and add some more css 
-- [] header, footer, etc. Make this look half-decent. This is what I would show an employer!
+- [] add readme for deployment
