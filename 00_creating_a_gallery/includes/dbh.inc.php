@@ -3,6 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "galleryexample";
+//^ standard XAMMP defaults
 
+$dbname = "galleryexample";
 $conn = mysqli_connect($servername, $username, $password, $dbname);

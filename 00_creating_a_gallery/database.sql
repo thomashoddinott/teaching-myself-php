@@ -8,7 +8,7 @@ create table gallery (
   orderGallery longtext not null
 );
 
--- 
+-- init table with something
 
 INSERT INTO gallery (titleGallery, descGallery, imgFullNameGallery, orderGallery)
 VALUES

@@ -1,4 +1,8 @@
-/* //todo - spice up the font a bit */
+body {
+  font: normal 12px Verdana, Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+}
 
 div.gallery {
   margin: 5px;

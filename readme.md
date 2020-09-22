@@ -1,4 +1,6 @@
-I am currently following this tutorial: https://www.youtube.com/watch?v=qVU3V0A05k8&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-
+I have finished [this tutorial](https://www.youtube.com/watch?v=qVU3V0A05k8&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-).
+
+For an overview of the skills I have picked up, see the gallery project I created (lessons 63-65 from the tutorial).
 
 **Why commit your progress?**
 

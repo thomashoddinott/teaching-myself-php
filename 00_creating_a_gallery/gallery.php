@@ -13,7 +13,7 @@
     <main>
       <section class="gallery-links">
         <div class="wrapper">
-          <h2>Gallery</h2>
+          <h1>Gallery</h1>
           
           <div class="gallery-container">
           <?php
@@ -54,12 +54,11 @@
                 <input type="file" name="file">
                 <button type="submit" name="submit">Upload</button>
               </form>
+            <br>
             </div>
             ';
         }
         ?>
-
-
         </div> 
       </section>
     </main>

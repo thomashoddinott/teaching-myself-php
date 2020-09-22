@@ -3,18 +3,12 @@
 if (isset($_POST['submit'])) {
   $newFileName = $_POST['submit'];
 
-  // if (empty($_POST['filename'])) {
-  //   $newFileName = "gallery";
-  // } else {
-  //   $newFileName = strtolower(str_replace(" ", "-", $newFileName));
-  // }
-
   $imageTitle = $_POST['filetitle'];
   $imageDesc = $_POST['filedesc'];
 
   $file = $_FILES['file'];
-
   //print_r($file);
+
   $fileName = $file['name'];
   $fileType = $file['type'];
   $fileTempName = $file['tmp_name'];
@@ -26,11 +20,10 @@ if (isset($_POST['submit'])) {
 
   $allowed = array("jpg", "jpeg", "png");
 
-  //too many if statements for my liking
-  //validation and error handling should be managed differently imo
-  if (in_array($fileActualExt, $allowed)) {
-    if ($fileError === 0) {
-      if ($fileSize < 2e6) {
+  //v - this code does the job for now
+  if (in_array($fileActualExt, $allowed)) { //todo 1. flip into guard statement
+    if ($fileError === 0) { //todo 2. flip into guard statement
+      if ($fileSize < 2e6) { //todo 3. flip into guard statement
         $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
         $fileDestination = "../img/gallery/" . $imageFullName;
 
@@ -60,24 +53,20 @@ if (isset($_POST['submit'])) {
             } else {
               mysqli_stmt_bind_param($stmt, "ssss", $imageTitle, $imageDesc, $imageFullName, $setImageOrder);
               mysqli_stmt_execute($stmt);
-
               move_uploaded_file($fileTempName, $fileDestination);
-
               header("Location: ../gallery.php?upload=success");
             }
           }
         }
-
       } else {
-        echo "File is over 2e3";
+        echo "File is over 2e6"; //see todo 3.
       }
     } else {  
-      echo "You had an error.";
+      echo "You had an error."; //see todo 2.
       exit();
     }
-  } else {
+  } else { //see todo 1.
     echo "You need to upload a proper file type.";
     exit();
   }
-
 }
