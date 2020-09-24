@@ -3,4 +3,4 @@
 - [x] give everything a thorough test
 - [x] add readme for deployment
 
-- [] refactor gallery-upload.inc.php to use guard statements
+- [] **refactor gallery-upload.inc.php to use guard statements** — almost done, just test it

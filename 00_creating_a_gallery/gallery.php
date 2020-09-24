@@ -48,7 +48,7 @@
             <div class="footer">
             <br>
             <h3>Upload an image</h3>
-              <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
+              <form action="includes/gallery-upload-REFACTOR.inc.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="filetitle" placeholder="Image title">
                 <input type="text" name="filedesc" placeholder="Image description">
                 <input type="file" name="file">
