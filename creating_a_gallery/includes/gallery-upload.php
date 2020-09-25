@@ -18,24 +18,29 @@ $fileError = $file['error'];
 $fileSize = $file['size'];
 
 $fileExt = explode(".", $fileName);
-$fileActualExt = strtolower(end($fileExt));
-//^todo combine into one; rename vars
+$fileExt = strtolower(end($fileExt));
+//needs to be a multi-liner - see: https://vijayasankarn.wordpress.com/2017/08/28/php-only-variables-should-be-passed-by-reference/
 
-if (!in_array($fileActualExt, $allowedFormats)) {
-  echo "You need to upload a proper file type: " . implode(", ", $allowedFormats); 
+//validation - quick and dirty
+//all the errors should be listed, not just one by one, etc.
+if (!in_array($fileExt, $allowedImgFormats)) {
+  echo "You need to upload a proper file type: " . implode(", ", $allowedImgFormats); 
+  exit();
+} elseif ($fileSize > $allowedImgSize) {
+  echo "File is over " . $allowedImgSize/1e3 . "kb"; 
+  exit();
+} elseif (empty($imageTitle)) {
+  echo "No image title"; 
+  exit();
+} elseif (empty($imageDesc)) {
+  echo "no image description"; 
   exit();
 } elseif (!$fileError === 0) {
   echo "You had an error."; 
   exit();
-} elseif ($fileSize > $allowedLimit) {
-  echo "File is over " . $allowedLimit/1e3 . "kb";
-  exit();
-} elseif (empty($imageTitle) || empty($imageDesc)) {
-  header("Location: ../gallery.php?upload=empty");
-  exit();
 }
 
-$imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
+$imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileExt;
 $fileDestination = "../img/gallery/" . $imageFullName;
 
 include_once "./dbh.php";

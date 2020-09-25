@@ -45,8 +45,8 @@
               <h3>
                 Upload an image
                 <i> 
-                  — max: '.$allowedLimit/1e3.'kb
-                  — formats: '.implode(", ", $allowedFormats).'
+                  — max: '.$allowedImgSize/1e3.'kb
+                  — formats: '.implode(", ", $allowedImgFormats).'
                 </i>  
               </h3>
                 <form action="includes/gallery-upload.php" method="post" enctype="multipart/form-data">

@@ -1,4 +1,3 @@
 <?php
-//todo - better naming
-$allowedFormats = array("jpg", "jpeg", "png");
-$allowedLimit = 0.25e6;
+$allowedImgFormats = array("jpg", "jpeg", "png");
+$allowedImgSize = 0.25e6;
