@@ -4,6 +4,7 @@
 - [x] add readme for deployment
 - [x] refactor gallery-upload.inc.php to use guard statements — almost done, just test it
 - [x] not a fan of .inc - changeme
+- [x] show off my 'magnum opus' --- reorganise - move 01-62 into one folder; 63-65 in another but rename it to gallery or something
 - [] rename consts
 - [] update screenshot
-- [] show off my 'magnum opus' --- reorganise - move 01-62 into one folder; 63-65 in another but rename it to gallery or something
+- [] final checks
