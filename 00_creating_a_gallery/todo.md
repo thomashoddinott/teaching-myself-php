@@ -2,5 +2,8 @@
 - [x] simple gallery page with css styling
 - [x] give everything a thorough test
 - [x] add readme for deployment
-
-- [] **refactor gallery-upload.inc.php to use guard statements** — almost done, just test it
+- [x] refactor gallery-upload.inc.php to use guard statements — almost done, just test it
+- [x] not a fan of .inc - changeme
+- [] rename consts
+- [] update screenshot
+- [] show off my 'magnum opus' --- reorganise - move 01-62 into one folder; 63-65 in another but rename it to gallery or something
